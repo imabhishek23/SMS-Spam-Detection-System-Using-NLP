@@ -1,36 +1,90 @@
-# Spam-Classifier
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/its-not-a-lie-if-you-believe-it.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
+# SMS Spam Detection System Using NLP and Python
 
-<p align="center">
-  <a href="https://github.com/ksdkamesh99/Spam-Classifier">
-    <img src="images/front.jfif" alt="Logo">
-  </a>
-</p>
+## Project Overview
+This project implements an SMS Spam Detection System using Natural Language Processing (NLP) techniques in Python. The system classifies text messages as either **"spam"** or **"ham"** (non-spam). By leveraging machine learning models and text preprocessing methods, the project demonstrates efficient text classification to filter unwanted messages.
 
-## 📌 Introduction:-
+## Features
+- **Spam and Ham Classification**: The system predicts whether a message is spam or not.
+- **Text Preprocessing**: Cleans and transforms text data using stemming and lemmatization techniques.
+- **Vectorization Techniques**: Utilizes both CountVectorizer and TF-IDF Vectorizer for feature extraction.
+- **Multiple Models**: Demonstrates different approaches for text processing, including:
+  - Using **Porter Stemmer** with **TF-IDF Vectorizer**
+  - Using **Lemmatizer** with **CountVectorizer**
+  - Using **Stemmer** with **CountVectorizer**
 
-A Natural Language Processing with SMS Data to predict whether the SMS is Spam/Ham with various ML Algorithms like multinomial-naive-bayes,logistic regression,svm,decision trees to compare accuracy and using various data cleaning and processing techniques like PorterStemmer,CountVectorizer,TFIDF Vetorizer,WordnetLemmatizer.
-It is implemented using LSTM and Word Embeddings to gain accuracy of 97.84%.
+## Prerequisites
+- Python 3.x
+- Required libraries:
+  - pandas
+  - numpy
+  - sklearn
+  - nltk
 
-## ✔❌Accuracy ❌✔:-
-| Text Preprocessing Type              | Logistic Regression | Multinomial NB | Support Vector Machine  | Decision Tree |
-|--------------------------------------|---------------------|----------------|-------------------------|---------------|
-| TFIDF Vectorizer + PorterStemmer     | 96.68%              | 97.30%         | 98.47%                  | 96.68%        |
-| CountVectorizer + PorterStemmer      | 98.65%              | 98.56%         | 98.74%                  | 97.84%        |
-| CountVectorizer + WordnetLemmatizer  | 98.56%              | 98.29%         | 98.38%                  | 97.75%        |
-| TFIDF Vectorizer + WordnetLemmatizer | 96.41%              | 97.48%         | 98.47%                  | 96.86%        |
+## Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/sms-spam-detection.git
+   cd sms-spam-detection
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+## Project Structure
+```
+.
+├── sms_using_Stemmer_with_countvectorizer.ipynb
+├── sms_using_lemmatizer_with_countvectorizer.ipynb
+├── sms_using_PorterStemmer_with_TFIdf_Vectorizer.ipynb
+├── README.md
+├── requirements.txt
+└── data
+    └── sms_spam_collection.csv  # Dataset file
+```
 
-## WorkFlow:-
-![Workflow of SMS spam Classifer](workflow.gif)
+## Dataset
+The SMS Spam Collection dataset contains labeled messages for training and testing.
+- **Label**: Indicates if a message is spam or ham.
+- **Message**: The content of the SMS.
 
-## 🏁 Datasets Used:-
-* The dataset used is SMS Spam Dataset created by UCI Machine Learning.This dataset is downloaded in kaggle.You can download it [here](https://www.kaggle.com/uciml/sms-spam-collection-dataset/download).
-* Reference for this dataset can be found [here](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/)
-## 📧Contact:-
-For any kind of suggesstions/ help in models code Please mail me at ksdkamesh99@gmail.com.
+Example:
+```
+spam	Free entry in a weekly competition to win...
+ham	Hey, what are you doing?
+```
 
-## 📜 LICENSE
-[MIT](https://github.com/ksdkamesh99/Spam-Classifier/blob/master/LICENSE)
+## NLP Techniques and Approach
+1. **Data Preprocessing**:
+   - Convert text to lowercase.
+   - Remove punctuation and special characters.
+   - Tokenize and apply stemming or lemmatization.
+2. **Feature Extraction**:
+   - **CountVectorizer**: Converts text into a bag-of-words representation.
+   - **TF-IDF Vectorizer**: Weighs terms based on their importance in the corpus.
+3. **Model Training**:
+   - Uses **Naive Bayes** or other classifiers to predict spam vs. ham.
+
+## Usage
+Run the respective notebooks to see the implementation:
+```bash
+jupyter notebook sms_using_Stemmer_with_countvectorizer.ipynb
+jupyter notebook sms_using_lemmatizer_with_countvectorizer.ipynb
+jupyter notebook sms_using_PorterStemmer_with_TFIdf_Vectorizer.ipynb
+```
+
+## Results
+- The system achieves high accuracy in distinguishing spam from ham messages.
+- Comparative performance of different preprocessing and vectorization techniques can be analyzed from the notebooks.
+
+## Future Improvements
+- Incorporate deep learning models for improved classification.
+- Expand dataset for better generalization.
+
+## License
+This project is licensed under the MIT License.
+
+---
+
+Thank you for using the SMS Spam Detection System! Feel free to contribute and enhance this project.
+
